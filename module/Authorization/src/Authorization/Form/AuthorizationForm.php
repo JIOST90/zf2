@@ -8,10 +8,8 @@ class AuthorizationForm extends Form
 {
     public function __construct($name = null)
     {
-        // we want to ignore the name passed
         parent::__construct('authorization');
         $this->setAttribute('method', 'post');
-		//$file = new Element\File('my-file');
         $this->add(array(
             'name' => 'id',
             'attributes' => array(

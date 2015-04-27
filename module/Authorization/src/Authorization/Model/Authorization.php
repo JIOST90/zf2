@@ -17,9 +17,9 @@ class Authorization implements InputFilterAwareInterface
     public function exchangeArray($data)
     {
         $this->id     = (isset($data['id']))     ? $data['id']     : null;
-        $this->login = (isset($data['login'])) ? $data['login'] : null;
+        $this->login = (isset($data['login']))   ? $data['login']  : null;
         $this->email  = (isset($data['email']))  ? $data['email']  : null;
-		$this->pass  = (isset($data['pass']))  ? $data['pass']  : null;
+		$this->pass  = (isset($data['pass']))    ? $data['pass']   : null;
     }
 	
     public function getArrayCopy()
@@ -58,7 +58,7 @@ class Authorization implements InputFilterAwareInterface
                         'name'    => 'StringLength',
                         'options' => array(
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
+                            'min'      =>4,
                             'max'      => 100,
                         ),
                     ),
@@ -96,7 +96,7 @@ class Authorization implements InputFilterAwareInterface
                         'name'    => 'StringLength',
                         'options' => array(
                             'encoding' => 'UTF-8',
-                            'min'      => 1,
+                            'min'      => 6,
                             'max'      => 100,
                         ),
                     ),
