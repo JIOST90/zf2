@@ -8,10 +8,9 @@ class AlbumForm extends Form
 {
     public function __construct($name = null)
     {
-        // we want to ignore the name passed
         parent::__construct('album');
         $this->setAttribute('method', 'post');
-		//$file = new Element\File('my-file');
+		$this->setAttribute('ENCTYPE', 'multipart/form-data');
         $this->add(array(
             'name' => 'id',
             'attributes' => array(

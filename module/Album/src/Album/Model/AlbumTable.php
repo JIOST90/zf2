@@ -31,12 +31,20 @@ class AlbumTable
  
     public function saveAlbum(Album $album) 
     {
+		if($_FILES){
+			$fileName = $_FILES['img_s']['name'];
+			$tmpName  = $_FILES['img_s']['tmp_name'];
+			$fileSize = $_FILES['img_s']['size'];
+			$fileType = $_FILES['img_s']['type'];
+			$fp      = fopen($tmpName, 'r');
+			$content = fread($fp, filesize($tmpName));
+			fclose($fp);
+		}
         $data = array(
             'artist' => $album->artist,
             'title'  => $album->title,
-			'img_s'  => $album->img_s,
-        );
- 
+			'img_s'  => $content,
+        );	
         $id = (int)$album->id;
         if ($id == 0) {
             $this->tableGateway->insert($data);

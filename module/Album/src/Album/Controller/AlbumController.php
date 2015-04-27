@@ -62,7 +62,6 @@ class AlbumController extends AbstractActionController
         if ($request->isPost()) {
             $form->setInputFilter($album->getInputFilter());
             $form->setData($request->getPost());
- 
             if ($form->isValid()) {
                 $this->getAlbumTable()->saveAlbum($form->getData());
  
