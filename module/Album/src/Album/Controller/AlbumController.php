@@ -69,7 +69,7 @@ class AlbumController extends AbstractActionController
                 return $this->redirect()->toRoute('album');
             }
         }
- 
+		//throw new \Exception($this->params());
         return array(
             'id' => $id,
             'form' => $form,

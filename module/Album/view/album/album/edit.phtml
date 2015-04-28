@@ -14,14 +14,23 @@ $form->setAttribute('action', $this->url(
         'id'     => $this->id,
     )
 ));
-//$form->setAttribute('ENCTYPE','multipart/form-data');
+
+
 
 $form->prepare();
  
 echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('id'));
-echo $this->formRow($form->get('title'));
-echo $this->formRow($form->get('artist'));
-echo $this->formFile($form->get('img_s'));
-echo $this->formSubmit($form->get('submit'));
+
+?><table class="table">
+	<tr><td><?php echo $this->formRow($form->get('title')); ?></td></tr>
+	<tr><td><?php echo $this->formRow($form->get('artist')); ?></td></tr>
+	<tr>
+		<td><?php echo $this->formFile($form->get('img_s')); ?></td>
+		<td><img src="data://image/jpeg;base64,<?php echo base64_encode($this->img_s); ?>" height="50" width="60"></td>
+	</tr>
+	<tr><td><?php echo $this->formSubmit($form->get('submit')); ?></td></tr>
+</table><?php 
+
 echo $this->form()->closeTag();
+

@@ -83,6 +83,11 @@ class Album implements InputFilterAwareInterface
                     ),
                 ),
             )));
+			
+			$inputFilter->add($factory->createInput(array(
+                'name'     => 'img_s',
+                'required' => true,
+            )));
  
             $this->inputFilter = $inputFilter;
         }

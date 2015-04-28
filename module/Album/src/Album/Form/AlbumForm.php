@@ -21,18 +21,20 @@ class AlbumForm extends Form
             'name' => 'artist',
             'attributes' => array(
                 'type'  => 'text',
+				'placeholder' => 'Artist',
             ),
             'options' => array(
-                'label' => 'Artist',
+                'label' => 'Artist - ',
             ),
         ));
         $this->add(array(
             'name' => 'title',
             'attributes' => array(
                 'type'  => 'text',
+				'placeholder' => 'Title',
             ),
             'options' => array(
-                'label' => 'Title',
+                'label' => 'Title - ',
             ),
         ));
 		
@@ -42,7 +44,7 @@ class AlbumForm extends Form
                 'type'  => 'file',
             ),
         ));
-		
+			
         $this->add(array(
             'name' => 'submit',
             'attributes' => array(
