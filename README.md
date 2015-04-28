@@ -1,7 +1,8 @@
-<<<<<<< HEAD
-# third.zz.mu
-Tests
+# http://zf2go.pe.hu/
 =======
-# zf2
-test2
->>>>>>> cfb06299a0127e360d63a5a22536eb8a8ce45026
+The test is completed:
+=======
+Albom - 60%
+Authorization - 30%
+Authentication -0%
+
